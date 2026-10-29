@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping
+@RequestMapping("identities")
 @RequiredArgsConstructor
 public class IdentityController {
 
@@ -31,5 +31,16 @@ public class IdentityController {
     @GetMapping("/{id}")
     public IdentityResponse findId(@PathVariable Long id) {
         return identityService.findId(id);
+    }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<IdentityResponse> update(@PathVariable Long id, @RequestBody @Valid IdentityRequest req) {
+        return ResponseEntity.ok(identityService.update(id, req));
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> delete(@PathVariable Long id) {
+        identityService.delete(id);
+        return ResponseEntity.ok().build();
     }
 }
