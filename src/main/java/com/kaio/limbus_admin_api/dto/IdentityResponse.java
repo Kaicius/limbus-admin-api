@@ -6,7 +6,7 @@ import com.kaio.limbus_admin_api.enums.Rarity;
 public record IdentityResponse(
         Long id, String name, Rarity rarity,
         Long sinnerId, String sinnerName,
-        String uptie1ArtUrl, String uptie3ArtUrlm,
+        String uptie1ArtUrl, String uptie3ArtUrl,
         String uptieCutscene, String obtainmentVideoUrl
 ) {
     public static IdentityResponse from(Identity i) {
