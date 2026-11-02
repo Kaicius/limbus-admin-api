@@ -20,7 +20,7 @@ public class SinnerSeeder implements CommandLineRunner {
         if (sinnerRepository.count() == 0) {
             List<String> names = List.of(
                     "Yi Sang", "Faust", "Don Quixote", "Ryōshū", "Meursault", "Hong Lu",
-                    "Heatcliff", "Ishmael", "Rodion", "Sinclair", "Outis",  "Gregor"
+                    "Heathcliff", "Ishmael", "Rodion", "Sinclair", "Outis",  "Gregor"
             );
             List<Sinner> sinners = new ArrayList<>();
             for (String name: names) {
