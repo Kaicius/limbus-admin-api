@@ -31,6 +31,8 @@ public class IdentityService {
         identity.setUptie3ArtUrl(req.uptie3ArtUrl());
         identity.setUptieCutscene(req.uptieCutscene());
         identity.setObtainmentVideoUrl(req.obtainmentVideoUrl());
+        identity.setQuote(req.quote());
+        identity.setRevealAt(req.revealAt());
 
         return IdentityResponse.from(identityRepository.save(identity));
     }
@@ -60,6 +62,8 @@ public class IdentityService {
         identity.setUptie3ArtUrl(req.uptie3ArtUrl());
         identity.setUptieCutscene(req.uptieCutscene());
         identity.setObtainmentVideoUrl(req.obtainmentVideoUrl());
+        identity.setQuote(req.quote());
+        identity.setRevealAt(req.revealAt());
 
         return IdentityResponse.from(identityRepository.save(identity));
     }
