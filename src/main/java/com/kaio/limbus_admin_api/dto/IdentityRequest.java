@@ -3,6 +3,7 @@ package com.kaio.limbus_admin_api.dto;
 import com.kaio.limbus_admin_api.enums.Rarity;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.PositiveOrZero;
 import jakarta.validation.constraints.Size;
 
 public record IdentityRequest (
@@ -14,5 +15,7 @@ public record IdentityRequest (
         String uptie1ArtUrl,
         String uptie3ArtUrl,
         String uptieCutscene,
-        String obtainmentVideoUrl
+        String obtainmentVideoUrl,
+        @Size(max = 500) String quote,
+        @PositiveOrZero Double revealAt
 ) {}
