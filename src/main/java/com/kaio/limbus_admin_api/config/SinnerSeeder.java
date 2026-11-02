@@ -4,12 +4,14 @@ import com.kaio.limbus_admin_api.entity.Sinner;
 import com.kaio.limbus_admin_api.repository.SinnerRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Component
+@Order(1)
 @RequiredArgsConstructor
 public class SinnerSeeder implements CommandLineRunner {
 
@@ -26,7 +28,7 @@ public class SinnerSeeder implements CommandLineRunner {
             for (String name: names) {
                 Sinner sinner = new Sinner();
                 sinner.setName(name);
-                sinnerRepository.save(sinner);
+                sinners.add(sinner);
             }
             sinnerRepository.saveAll(sinners);
         }
